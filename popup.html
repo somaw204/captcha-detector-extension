@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Detector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            padding: 5px 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features li::before {
+            content: "✓ ";
+            color: #00b894;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            border-color: #00b894;
+        }
+
+        .btn.primary:hover {
+            background: linear-gradient(135deg, #00a085, #00967d);
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .version {
+            text-align: center;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="icon">🛡️</span>
+        <span class="title">CAPTCHA Detector</span>
+    </div>
+
+    <p class="description">
+        Always-on CAPTCHA detection with real-time monitoring. The detector panel stays visible across all websites and updates every 2 seconds.
+    </p>
+
+    <ul class="features">
+        <li>Always visible floating panel</li>
+        <li>Real-time detection every 2 seconds</li>
+        <li>Instant notifications on changes</li>
+        <li>Detects reCAPTCHA, hCaptcha, Turnstile</li>
+        <li>Identifies FunCAPTCHA & Arkose Labs</li>
+        <li>Monitors Cloudflare challenges</li>
+        <li>Live status with detection count</li>
+    </ul>
+
+    <div class="actions">
+        <button class="btn primary" id="forceDetection">Force Detection Scan</button>
+        <button class="btn" id="togglePanel">Minimize/Expand Panel</button>
+        <button class="btn" id="resetPosition">Reset Panel Position</button>
+        <button class="btn" id="exportData">Export Detection Data</button>
+    </div>
+
+    <div class="status" id="status">
+        Extension active on current tab
+    </div>
+
+    <div class="version">
+        v1.0.0
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

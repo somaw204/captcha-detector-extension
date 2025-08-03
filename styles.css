@@ -1,0 +1,50 @@
+
+#captcha-detector-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2e0f4b;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 99999;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+#captcha-detector-panel .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#captcha-detector-panel button {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#captcha-status.collapsed {
+  display: none;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.found {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.not-found {
+  color: #ff4e4e;
+  font-weight: bold;
+}
